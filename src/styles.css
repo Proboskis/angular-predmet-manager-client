@@ -1,0 +1,60 @@
+/******************************************
+* Global styles for the entire application*
+******************************************/
+/*@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");*/
+
+:root {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  /* color palette */
+  --white: #ffffff;
+  --nav-white: #acb2b7;
+  --gray: #f1f1f1;
+  --dark-gray: #707070;
+  --input-form-color: #22282c;
+  --blue: #2e74ac;
+  --red: #cb491b;
+  --light-green: #9ee09b;
+  --dark-green: #398535;
+  /*borders*/
+  --border: 0.1rem solid #e6e6e6;
+}
+
+body,
+div,
+nav,
+header,
+main,
+footer,
+form,
+label,
+input,
+textarea,
+button,
+h1,
+p,
+a,
+ul,
+li,
+span,
+select,
+option,
+::backdrop,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--gray);
+}

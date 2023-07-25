@@ -1,0 +1,201 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: var(--dark-gray);
+  padding: 2rem 0;
+}
+
+.alert-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert {
+  height: auto;
+  width: fit-content;
+  border: 1px solid var(--dark-green);
+  background-color: var(--light-green);
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert > p > button {
+  border: none;
+  background-color: transparent;
+  color: var(--dark-green);
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert > p {
+  font-size: 1.6rem;
+}
+
+.grid-container {
+  height: auto;
+  min-width: 90%;
+  width: 90%;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "broj-predmeta naziv-predmeta ustanova iznos datum-unosa potpisano"
+    "arhivski-broj osoba napomena admin-radnik datum-otpisa ."
+    ". opis-predmeta opis-predmeta faza-predmeta faza-predmeta submit";
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 0.75fr;
+  background-color: var(--white);
+  border: var(--border);
+}
+
+.grid-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding: 2.35rem 2rem;
+}
+
+.label {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.form-control {
+  height: auto;
+  border: 0.1rem solid var(--dark-gray);
+  background-color: var(--white);
+  padding: 0.5rem;
+  color: var(--dark-gray);
+}
+
+.form-control-long {
+  height: 10rem;
+  border: 0.1rem solid var(--dark-gray);
+  background-color: var(--white);
+  padding: 0.5rem;
+  resize: none;
+}
+
+.form-control:focus {
+  outline: none !important;
+  color: var(--input-form-color);
+}
+
+.form-control-long:focus {
+  outline: none !important;
+  color: var(--input-form-color);
+}
+
+#broj-predmeta {
+  grid-area: broj-predmeta;
+}
+
+#arhivski-broj {
+  grid-area: arhivski-broj;
+}
+
+#naziv-predmeta {
+  grid-area: naziv-predmeta;
+}
+
+#iznos {
+  grid-area: iznos;
+}
+
+#ustanova {
+  grid-area: ustanova;
+}
+
+#osoba {
+  grid-area: osoba;
+}
+
+#datum-unosa {
+  grid-area: datum-unosa;
+}
+
+#datum-otpisa {
+  grid-area: datum-otpisa;
+}
+
+#potpisano {
+  grid-area: potpisano;
+}
+
+#napomena {
+  grid-area: napomena;
+}
+
+#opis-predmeta {
+  grid-area: opis-predmeta;
+}
+
+#faza-predmeta {
+  grid-area: faza-predmeta;
+}
+
+#admin-radnik {
+  grid-area: admin-radnik;
+}
+
+#submit {
+  grid-area: submit;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+#submit-btn {
+  border: none;
+  color: var(--white);
+  background-color: var(--blue);
+  width: 12rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+#submit-btn:hover {
+  background-color: var(--red);
+  transition: 0.2s ease-in-out;
+}
+
+/********************************
+* Styles for the form validators*
+*********************************/
+
+input.ng-invalid {
+  border-left: 0.5rem solid var(--red);
+}
+
+input.ng-valid {
+  border-left: 0.5rem solid var(--dark-green);
+}
+
+.error {
+  color: var(--red);
+}

@@ -1,0 +1,173 @@
+h1 {
+  text-align: center;
+  color: var(--dark-gray);
+  padding: 2rem 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  height: auto;
+  width: 90%;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "id naziv-predmeta ustanova iznos datum-unosa potpisano"
+    "broj-predmeta osoba napomena admin-radnik datum-otpisa delete"
+    "arhivski-broj opis-predmeta opis-predmeta faza-predmeta faza-predmeta submit";
+  grid-auto-columns: 1fr;
+  margin-top: 5rem;
+  background-color: var(--white);
+  border-left: 0.7rem solid var(--blue);
+}
+
+.grid-element {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: var(--border);
+}
+
+.label {
+  font-size: 1.7rem;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.form-control {
+  height: auto;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--dark-gray);
+}
+
+.form-control:focus {
+  outline: none !important;
+  color: var(--input-form-color);
+}
+
+#id {
+  grid-area: id;
+}
+
+#id > div {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 7rem;
+}
+
+#broj-predmeta {
+  grid-area: broj-predmeta;
+}
+
+#arhivski-broj {
+  grid-area: arhivski-broj;
+}
+
+#naziv-predmeta {
+  grid-area: naziv-predmeta;
+}
+
+#iznos {
+  grid-area: iznos;
+}
+
+#ustanova {
+  grid-area: ustanova;
+}
+
+#osoba {
+  grid-area: osoba;
+}
+
+#datum-unosa {
+  grid-area: datum-unosa;
+}
+
+#datum-otpisa {
+  grid-area: datum-otpisa;
+}
+
+#potpisano {
+  grid-area: potpisano;
+}
+
+#napomena {
+  grid-area: napomena;
+}
+
+#opis-predmeta {
+  grid-area: opis-predmeta;
+}
+
+#faza-predmeta {
+  grid-area: faza-predmeta;
+}
+
+#admin-radnik {
+  grid-area: admin-radnik;
+}
+
+#submit {
+  grid-area: submit;
+  align-items: center;
+  justify-content: center;
+}
+
+#delete {
+  grid-area: delete;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit-btn {
+  border: none;
+  color: var(--white);
+  background-color: var(--blue);
+  width: 12rem;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+#submit-btn:hover {
+  background-color: #368bcf;
+  transition: 0.2s ease-in-out;
+}
+
+#delete-btn {
+  border: none;
+  color: var(--white);
+  background-color: var(--red);
+  width: 12rem;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+#delete-btn:hover {
+  background-color: #e8521e;
+  transition: 0.2s ease-in-out;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  font-size: 2rem;
+}
+
+.my-pagination .ngx-pagination .current {
+  background: var(--blue);
+  color: var(--white);
+}

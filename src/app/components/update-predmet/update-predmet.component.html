@@ -1,0 +1,183 @@
+<div class="main-wrapper">
+  <h1>Izmenite predmet</h1>
+
+  <form
+    class="grid-container"
+    [formGroup]="editPredmet"
+    (ngSubmit)="collection()"
+  >
+    <!--1-->
+    <div class="grid-element" id="broj-predmeta">
+      <label class="label" for="broj-predmeta">Broj predmeta</label>
+      <input
+        type="text"
+        formControlName="broj_predmeta"
+        class="form-control"
+        placeholder="Unesite broj predmeta"
+      />
+      <span class="error" *ngIf="brojPredmeta!.invalid && brojPredmeta!.touched"
+        >* Broj predmeta mora biti unet.</span
+      >
+    </div>
+
+    <!--2-->
+    <div class="grid-element" id="arhivski-broj">
+      <label class="label" for="arhivski-broj">Arhivski broj</label>
+      <input
+        type="text"
+        formControlName="arhivski_broj"
+        class="form-control"
+        placeholder="Unesite arhivski broj"
+      />
+    </div>
+
+    <!--3-->
+    <div class="grid-element" id="naziv-predmeta">
+      <label class="label" for="naziv-predmeta">Naziv Predmeta</label>
+      <input
+        type="text"
+        formControlName="naziv_predmeta"
+        class="form-control"
+        placeholder="Unesite iznos"
+      />
+    </div>
+
+    <!--4-->
+    <div class="grid-element" id="iznos">
+      <label class="label" for="iznos">Iznos</label>
+      <input
+        type="text"
+        formControlName="iznos"
+        class="form-control"
+        placeholder="Unesite iznos"
+      />
+      <span class="error" *ngIf="iznos!.invalid && iznos!.touched"
+        >* Iznos mora sadržati samo brojeve.</span
+      >
+    </div>
+
+    <!--5-->
+    <div class="grid-element" id="ustanova">
+      <label class="label" for="ustanova">Ustanova / Firma</label>
+      <input
+        type="text"
+        formControlName="ustanova"
+        class="form-control"
+        placeholder="Unesite naziv ustanove"
+      />
+      <span class="error" *ngIf="ustanova!.invalid && ustanova!.touched">
+        * Naziv ustanove mora biti unet i ne sme sadržati brojeve ili specijalne
+        karaktere.
+      </span>
+    </div>
+
+    <!--6-->
+    <div class="grid-element" id="osoba">
+      <label class="label" for="osoba">Osoba</label>
+      <input
+        type="text"
+        formControlName="preuzima_osoba"
+        class="form-control"
+        placeholder="Unesite ime osobe"
+      />
+      <span class="error" *ngIf="osoba!.invalid">
+        * Ime osobe ne sme sadržati brojeve ili specijalne karaktere.
+      </span>
+    </div>
+
+    <!--7-->
+    <div class="grid-element" id="datum-unosa">
+      <label class="label" for="datum-unosa">Datum unosa</label>
+      <input type="date" formControlName="datum_unosa" class="form-control" />
+    </div>
+
+    <!--8-->
+    <div class="grid-element" id="datum-otpisa">
+      <label class="label" for="datum-vracanja">Datum otpisa</label>
+      <input type="date" formControlName="datum_otpisa" class="form-control" />
+    </div>
+
+    <!--9-->
+    <div class="grid-element" id="potpisano">
+      <label class="label" for="potpis">Potpisano</label>
+      <input
+        type="text"
+        formControlName="potpisano"
+        class="form-control"
+        placeholder="nepotpisano"
+      />
+      <span class="error" *ngIf="potpis!.invalid && potpis!.touched"
+        >* Polje potpis mora sadržati 'potpisano' ili 'nepotpisano'.</span
+      >
+    </div>
+
+    <!--10-->
+    <div class="grid-element" id="napomena">
+      <label class="label" for="napomena">Napomena</label>
+      <input
+        type="text"
+        formControlName="napomena"
+        class="form-control"
+        placeholder="Unesite napomenu"
+      />
+    </div>
+
+    <!--11-->
+    <div class="grid-element" id="opis-predmeta">
+      <label class="label" for="opis-predmeta">Opis predmeta</label>
+      <textarea
+        type="text"
+        formControlName="opis_predmeta"
+        class="form-control-long"
+        placeholder="Unesite opis predmeta..."
+      ></textarea>
+    </div>
+
+    <!--12-->
+    <div class="grid-element" id="faza-predmeta">
+      <label class="label" for="faza-predmeta">Faza predmeta</label>
+      <textarea
+        type="text"
+        formControlName="faza_predmeta"
+        class="form-control-long"
+        placeholder="Unesite fazu predmeta..."
+      ></textarea>
+    </div>
+
+    <!--13-->
+    <div class="grid-element" id="admin-radnik">
+      <label class="label" for="admin-radnik">Administrativni radnik</label>
+      <input
+        type="text"
+        formControlName="admin_radnik"
+        class="form-control"
+        placeholder="administrativni radnik"
+      />
+      <span class="error" *ngIf="adminRadnik!.invalid && adminRadnik!.touched"
+        >* Administrativni radnik mora biti unet.</span
+      >
+    </div>
+
+    <!--14-->
+    <div class="grid-element" id="submit">
+      <input
+        type="submit"
+        id="submit-btn"
+        value="Izmeni Predmet"
+        [disabled]="editPredmet.invalid"
+        (click)="collection()"
+      />
+    </div>
+  </form>
+
+  <div *ngIf="alert" class="alert-wrapper">
+    <div class="alert">
+      <p>
+        Vaši podatci su uspešno uneti u bazu...
+        <button (click)="closeAlert()" type="button">
+          <span>&times;</span>
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

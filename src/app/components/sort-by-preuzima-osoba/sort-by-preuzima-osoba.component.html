@@ -1,0 +1,171 @@
+<div class="filter-main-wrapper">
+  <h1>Razvrstavanje po osobi koja preuzima predmet</h1>
+
+  <form (ngSubmit)="Sort()">
+    <div class="filter-from">
+      <div>
+        <label class="filter-label" for="filter-osoba">OSOBA</label>
+        <input
+          type="text"
+          class="filter-form-control"
+          placeholder="Unesite ime osobe"
+          name="preuzima_osoba"
+          [(ngModel)]="preuzima_osoba"
+        />
+        <input type="submit" id="submit-btn" value="Razvrstaj predmete" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<h1>Spisak filtriranih predmeta</h1>
+
+<main>
+  <div class="wrapper">
+    <div
+      class="grid-container"
+      *ngFor="
+        let item of collection
+          | paginate
+            : { itemsPerPage: 5, currentPage: page, totalItems: totalLength }
+      "
+    >
+      <!--0-->
+      <div class="grid-element" id="id">
+        <label class="label">Redni Broj</label>
+        <div type="text" class="form-control">
+          {{ item.id }}
+        </div>
+      </div>
+
+      <!--1-->
+      <div class="grid-element" id="broj-predmeta">
+        <label class="label">Broj predmeta</label>
+        <div type="text" class="form-control">
+          {{ item.broj_predmeta }}
+        </div>
+      </div>
+
+      <!--2-->
+      <div class="grid-element" id="arhivski-broj">
+        <label class="label">Arhivski broj</label>
+        <div type="text" class="form-control">
+          {{ item.arhivski_broj }}
+        </div>
+      </div>
+
+      <!--3-->
+      <div class="grid-element" id="naziv-predmeta">
+        <label class="label">Naziv Predmeta</label>
+        <div type="text" class="form-control">
+          {{ item.naziv_predmeta }}
+        </div>
+      </div>
+
+      <!--4-->
+      <div class="grid-element" id="iznos">
+        <label class="label">Iznos</label>
+        <div type="text" class="form-control">
+          {{ item.iznos }}
+        </div>
+      </div>
+
+      <!--5-->
+      <div class="grid-element" id="ustanova">
+        <label class="label">Ustanova / Firma</label>
+        <div type="text" class="form-control">
+          {{ item.ustanova }}
+        </div>
+      </div>
+
+      <!--6-->
+      <div class="grid-element" id="osoba">
+        <label class="label">Osoba</label>
+        <div type="text" class="form-control">
+          {{ item.preuzima_osoba }}
+        </div>
+      </div>
+
+      <!--7-->
+      <div class="grid-element" id="datum-unosa">
+        <label class="label">Datum unosa</label>
+        <div type="date" class="form-control" name="datum-unosa">
+          {{ item.datum_unosa }}
+        </div>
+      </div>
+
+      <!--8-->
+      <div class="grid-element" id="datum-otpisa">
+        <label class="label">Datum otpisa</label>
+        <div type="date" class="form-control" name="datum-otpisa">
+          {{ item.datum_otpisa }}
+        </div>
+      </div>
+
+      <!--9-->
+      <div class="grid-element" id="potpisano">
+        <label class="label">Potpisano</label>
+        <div type="text" class="form-control">
+          {{ item.potpisano }}
+        </div>
+      </div>
+
+      <!--10-->
+      <div class="grid-element" id="napomena">
+        <label class="label">Napomena</label>
+        <div type="text" class="form-control">
+          {{ item.napomena }}
+        </div>
+      </div>
+
+      <!--11-->
+      <div class="grid-element" id="opis-predmeta">
+        <label class="label">Opis predmeta</label>
+        <div type="text" class="form-control">
+          {{ item.opis_predmeta }}
+        </div>
+      </div>
+
+      <!--12-->
+      <div class="grid-element" id="faza-predmeta">
+        <label class="label">Faza predmeta</label>
+        <div type="text" class="form-control">
+          {{ item.faza_predmeta }}
+        </div>
+      </div>
+
+      <!--13-->
+      <div class="grid-element" id="admin-radnik">
+        <label class="label">Administrativni Radnik</label>
+        <div type="text" class="form-control">
+          {{ item.admin_radnik }}
+        </div>
+      </div>
+
+      <!--14-->
+      <div class="grid-element" id="submit">
+        <a routerLink="/update/{{ item.id }}">
+          <input type="button" id="submit-btn" value="Uredi Predmet" />
+        </a>
+      </div>
+
+      <!--15-->
+      <div class="grid-element" id="delete">
+        <a>
+          <input
+            (click)="removePredmet(item.id)"
+            type="button"
+            id="delete-btn"
+            value="Obriši Predmet"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="page = $event"
+    ></pagination-controls>
+  </div>
+</main>
